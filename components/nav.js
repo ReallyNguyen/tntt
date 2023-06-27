@@ -1,23 +1,32 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const CustomImage = ({ src, width, height, href, className = "" }) => {
     return <Image src={src} width={width} height={height} className={`${className}`} />;
 };
 
-const CustomLink = ({ href, title, className = "" }) => {
+const CustomLink = ({ href, messageId, className = "" }) => {
     return (
-        <Link href={href} className={`${className}`}>
-            {title}
+        <Link href={href} className={className}>
+            <FormattedMessage id={messageId} />
         </Link>
-    )
-}
+    );
+};
 
-export default function Navbar() {
+export default function Navbar({ dir }) {
+
+    const { locales } = useRouter();
+    const intl = useIntl();
+
+    const about = intl.formatMessage({ id: "nav.about" })
+
     return (
         <>
-            <header className="flex flex-row justify-between px-32 py-8">
+            <header dir={dir} className="flex flex-row justify-between px-32 py-8 font-montserrat font-bold">
+
                 <Link href="/" className="flex flex-row items-center">
                     < CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />
                     <h2>TNTT Vancouver</h2>
@@ -25,31 +34,37 @@ export default function Navbar() {
                 <nav className="flex flex-row items-center">
                     <div className="flex flex-row items-center mr-7">
                         <div className="relative group">
-                            <CustomLink href="/about" title="About" className="mr-7 group-hover:underline" />
+                            <CustomLink href="/about" messageId="nav.about" className="mr-7 group-hover:underline" />
                             <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg">
-                                <CustomLink href="/overview" title="Overview" className="block px-4 py-2" />
-                                <CustomLink href="/resources" title="Resources" className="block px-4 py-2" />
-                                <CustomLink href="/our-team" title="Our Team" className="block px-4 py-2" />
+                                <CustomLink href="/about" messageId="about.overview" className="block px-4 py-2" />
+                                <CustomLink href="/resources" messageId="about.resource" className="block px-4 py-2" />
+                                <CustomLink href="/our-team" messageId="about.team" className="block px-4 py-2" />
                             </div>
                         </div>
                         <div className="relative group">
-                            <CustomLink href="/nganh" title="Nganh" className="mr-7 group-hover:underline" />
+                            <CustomLink href="/division" messageId="nav.division" className="mr-7 group-hover:underline" />
                             <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg text-left">
-                                <CustomLink href="/overview" title="Ấu Nhi" className="block px-4 py-2" />
-                                <CustomLink href="/resources" title="Thiếu Nhi" className="block px-4 py-2" />
-                                <CustomLink href="/our-team" title="Nghĩa Sĩ" className="block px-4 py-2" />
-                                <CustomLink href="/overview" title="Hiệp Sĩ" className="block px-4 py-2" />
-                                <CustomLink href="/resources" title="Huynh Trưởng" className="block px-4 py-2" />
+                                <CustomLink href="/" messageId="division.seedling" className="block px-4 py-2" />
+                                <CustomLink href="/" messageId="division.search" className="block px-4 py-2" />
+                                <CustomLink href="/" messageId="division.companion" className="block px-4 py-2" />
+                                <CustomLink href="/" messageId="division.eucharistic" className="block px-4 py-2" />
+                                <CustomLink href="/" messageId="division.youth" className="block px-4 py-2" />
                             </div>
                         </div>
-                        <CustomLink href="/" title="News" className="mr-7" />
-                        <CustomLink href="/" title="Schedule" className="mr-7" />
-                        <CustomLink href="/" title="Contact" className="mr-7" />
+                        <CustomLink href="/" messageId="nav.news" className="mr-7" />
+                        <CustomLink href="/" messageId="nav.contact" className="mr-7" />
+                        <CustomLink href="/" messageId="nav.register" className="mr-7" />
                     </div>
                     <div className="flex flex-row items-center">
-                        <h2 className="mr-4">English</h2>
+                        <div>
+                            {[...locales].sort().map((locale) => (
+                                <Link key={locale} href="" locale={locale}>
+                                    <div>{locale}</div>
+                                </Link>
+                            ))}
+                        </div>
                         <button className="bg-red px-2.5 py-1.5 rounded-md transform transition-all duration-300 hover:scale-105 hover:bg-red-500">
-                            <CustomLink href="/" title="Register" className="text-white" />
+                            <CustomLink href="https://docs.google.com/forms/d/e/1FAIpQLSfSQHe-nDfkHKwMZJ0RSeSlrqnjYMImU9IzRlwUOuuJxJe82w/viewform" messageId="nav.register" className="text-white" />
                         </button>
                     </div>
                 </nav>
