@@ -20,23 +20,36 @@ export default function Carousel() {
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [intervalId, setIntervalId] = useState(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000); // Change slide every 3 seconds
+        }, 5000); // Change slide every 5 seconds
+
+        setIntervalId(interval);
 
         return () => clearInterval(interval);
     }, []);
 
     const goToNextSlide = () => {
+        clearInterval(intervalId);
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        }, 5000);
+        setIntervalId(interval);
     };
 
     const goToPreviousSlide = () => {
+        clearInterval(intervalId);
         setCurrentSlide((prevSlide) =>
             prevSlide === 0 ? slides.length - 1 : prevSlide - 1
         );
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        }, 5000);
+        setIntervalId(interval);
     };
 
     return (
