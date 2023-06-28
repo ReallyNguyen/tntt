@@ -25,7 +25,7 @@ export default function Navbar({ dir }) {
 
     return (
         <>
-            <header dir={dir} className="flex flex-row justify-between px-32 py-8 font-montserrat font-bold">
+            <header dir={dir} className="flex flex-row justify-between py-8 font-montserrat font-bold">
 
                 <Link href="/" className="flex flex-row items-center">
                     < CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />
@@ -54,16 +54,16 @@ export default function Navbar({ dir }) {
                         <CustomLink href="/" messageId="nav.news" className="mr-7" />
                         <CustomLink href="/" messageId="nav.contact" className="mr-7" />
                         <CustomLink href="/" messageId="nav.register" className="mr-7" />
-                    </div>
-                    <div className="flex flex-row items-center">
-                        <div>
+                        <div className="flex flex-row gap-4 mr-7">
                             {[...locales].sort().map((locale) => (
                                 <Link key={locale} href="" locale={locale}>
                                     <div>{locale}</div>
                                 </Link>
                             ))}
                         </div>
-                        <button className="bg-red px-2.5 py-1.5 rounded-md transform transition-all duration-300 hover:scale-105 hover:bg-red-500">
+                    </div>
+                    <div className="flex flex-row items-center">
+                        <button className=" bg-red px-2.5 py-1.5 rounded-md transform transition-all duration-300 hover:scale-105 hover:bg-red-500">
                             <CustomLink href="https://docs.google.com/forms/d/e/1FAIpQLSfSQHe-nDfkHKwMZJ0RSeSlrqnjYMImU9IzRlwUOuuJxJe82w/viewform" messageId="nav.register" className="text-white" />
                         </button>
                     </div>
