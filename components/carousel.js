@@ -24,7 +24,7 @@ export default function Carousel() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 3000); // Change slide every 3 seconds
+        }, 5000); // Change slide every 3 seconds
 
         return () => clearInterval(interval);
     }, []);
