@@ -3,19 +3,19 @@ import React, { useState, useEffect } from "react";
 export default function Carousel() {
     const slides = [
         {
-            url: "/carousel/1.JPG"
+            url: "../carousel/1.JPG"
         },
         {
-            url: "/carousel/2.JPG"
+            url: "../carousel/2.JPG"
         },
         {
-            url: "/carousel/3.JPG"
+            url: "../carousel/3.JPG"
         },
         {
-            url: "/carousel/4.JPG"
+            url: "../carousel/4.JPG"
         },
         {
-            url: "/carousel/5.JPG"
+            url: "../carousel/5.JPG"
         }
     ];
 
