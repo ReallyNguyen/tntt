@@ -4,7 +4,6 @@
 html,
 body {
     background-color: #F8F7F9;
-    padding: 0 3rem;
 }
 
 @tailwind base;

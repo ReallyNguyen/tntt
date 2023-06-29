@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 
-const CustomImage = ({ src, width, height, href, className = "" }) => {
+const CustomImage = ({ src, width, height, className = "" }) => {
     return <Image src={src} width={width} height={height} className={`${className}`} />;
 };
 
@@ -21,11 +21,9 @@ export default function Navbar({ dir }) {
     const { locales } = useRouter();
     const intl = useIntl();
 
-    const about = intl.formatMessage({ id: "nav.about" })
-
     return (
         <>
-            <header dir={dir} className="flex flex-row justify-between py-8 font-montserrat font-bold">
+            <header dir={dir} className="flex flex-row justify-between px-28 py-8 font-montserrat font-bold">
 
                 <Link href="/" className="flex flex-row items-center">
                     < CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />
@@ -35,7 +33,7 @@ export default function Navbar({ dir }) {
                     <div className="flex flex-row items-center mr-7">
                         <div className="relative group">
                             <CustomLink href="/about" messageId="nav.about" className="mr-7 group-hover:underline" />
-                            <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg">
+                            <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg z-10">
                                 <CustomLink href="/about" messageId="about.overview" className="block px-4 py-2" />
                                 <CustomLink href="/resources" messageId="about.resource" className="block px-4 py-2" />
                                 <CustomLink href="/our-team" messageId="about.team" className="block px-4 py-2" />
@@ -43,7 +41,7 @@ export default function Navbar({ dir }) {
                         </div>
                         <div className="relative group">
                             <CustomLink href="/division" messageId="nav.division" className="mr-7 group-hover:underline" />
-                            <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg text-left">
+                            <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg text-left z-10">
                                 <CustomLink href="/" messageId="division.seedling" className="block px-4 py-2" />
                                 <CustomLink href="/" messageId="division.search" className="block px-4 py-2" />
                                 <CustomLink href="/" messageId="division.companion" className="block px-4 py-2" />

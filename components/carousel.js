@@ -3,19 +3,19 @@ import React, { useState, useEffect } from "react";
 export default function Carousel() {
     const slides = [
         {
-            url: "../carousel/1.JPG"
+            url: "./carousel/1.JPG"
         },
         {
-            url: "../carousel/2.JPG"
+            url: "./carousel/2.JPG"
         },
         {
-            url: "../carousel/3.JPG"
+            url: "./carousel/3.JPG"
         },
         {
-            url: "../carousel/4.JPG"
+            url: "./carousel/4.JPG"
         },
         {
-            url: "../carousel/5.JPG"
+            url: "./carousel/5.JPG"
         }
     ];
 
@@ -53,14 +53,14 @@ export default function Carousel() {
     };
 
     return (
-        <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 relative">
+        <div className="w-[32rem] h-[33rem] relative">
             <div
                 style={{ backgroundImage: `url(${slides[currentSlide].url})` }}
-                className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+                className="w-full h-full rounded-2xl bg-center bg-cover transition-opacity duration-500"
             >
                 {/* Left arrow */}
                 <div
-                    className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer"
+                    className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75"
                     onClick={goToPreviousSlide}
                 >
                     <h1 className="text-9xl text-white">&larr;</h1>
@@ -68,7 +68,7 @@ export default function Carousel() {
 
                 {/* Right arrow */}
                 <div
-                    className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+                    className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75"
                     onClick={goToNextSlide}
                 >
                     <h1 className="text-9xl text-white">&rarr;</h1>

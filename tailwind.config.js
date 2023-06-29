@@ -19,7 +19,21 @@ module.exports = {
         white: "#FFFFFF",
         lightbg: "#F8F7F9",
         darkbg: "#1E1F23",
-        red: "#EF233C"
+        red: "#EF233C",
+        grey: "#464748",
+        lightgrey: "#EFEDF1"
+      },
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '88': '22rem',
+        '92': '23rem',
+        '96': '24rem',
+        '98': '24.5rem',
+        '100': '25rem',
+        '112': '28rem',
+        '124': '31rem',
+        '132': '33rem'
       }
     },
   },

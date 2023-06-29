@@ -26,7 +26,6 @@ export default function App({ Component, pageProps }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <Navbar />
           <Component {...pageProps} dir={getDirection(locale)} />
         </main>
       </IntlProvider>
