@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Counter = () => {
+const Counter = ({ endNumber, speed }) => {
     const [count, setCount] = useState(0);
     const [startCounting, setStartCounting] = useState(false);
 
@@ -24,19 +24,19 @@ const Counter = () => {
     useEffect(() => {
         if (startCounting) {
             const interval = setInterval(() => {
-                if (count < 100) {
+                if (count < endNumber) {
                     setCount((prevCount) => prevCount + 1);
                 }
-            }, 50); // Decreased interval time to 50 milliseconds
+            }, speed); // Adjust the interval duration based on the desired speed
 
             return () => {
                 clearInterval(interval);
             };
         }
-    }, [count, startCounting]);
+    }, [count, endNumber, speed, startCounting]);
 
     return (
-        <div className="text-center">
+        <div className="font-montserrat font-black text-6xl">
             <h2>{count}</h2>
         </div>
     );
