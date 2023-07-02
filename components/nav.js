@@ -16,7 +16,7 @@ const CustomLink = ({ href, messageId, className = "" }) => {
     );
 };
 
-export default function Navbar({ dir }) {
+export default function Nav({ dir }) {
     const { locales } = useRouter();
     const intl = useIntl();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function Navbar({ dir }) {
 
     const DesktopMenu = () => {
         return (
-            <div className="hidden lg:flex lg:flex-row lg:items-center flex flex-col items-center mr-7">
+            <div className="hidden lg:flex lg:flex-row lg:items-center flex-col items-center">
                 <div className="relative group">
                     <div className="lg:mr-7 group-hover:underline">
                         <CustomLink href="/about" messageId="nav.about" />
@@ -94,7 +94,7 @@ export default function Navbar({ dir }) {
         };
 
         return (
-            <nav className="fixed inset-0 items-center justify-center bg-white z-20 font-mono font-black">
+            <nav className="fixed items-center justify-center bg-white z-20 font-mono font-black">
                 <div className="flex flex-col items-center justify-center w-full h-full">
                     <div className="relative group mb-4">
                         <button
@@ -192,7 +192,7 @@ export default function Navbar({ dir }) {
         <>
             <header
                 dir={dir}
-                className="flex flex-row justify-between px-28 py-8 font-montserrat font-black relative lg:sticky top-0 z-20 bg-lightbg"
+                className="flex flex-row justify-between lg:px-28 px-12 py-8 font-montserrat font-black relative lg:sticky top-0 z-20 bg-lightbg"
             >
                 <Link href="/" className="flex flex-row items-center">
                     <CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />

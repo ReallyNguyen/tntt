@@ -6,6 +6,7 @@ import { IntlProvider } from 'react-intl'
 
 import en from '../i18n/en.json'
 import vn from '../i18n/vn.json'
+import { AnimatePresence } from 'framer-motion'
 
 const messages = {
   en,
@@ -17,6 +18,7 @@ function getDirection(locale) {
 }
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   const { locale } = useRouter();
   return (
     <>
@@ -26,7 +28,9 @@ export default function App({ Component, pageProps }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <Component {...pageProps} dir={getDirection(locale)} />
+          <AnimatePresence mode="wait">
+            <Component key={router.asPath} {...pageProps} dir={getDirection(locale)} />
+          </AnimatePresence>
         </main>
       </IntlProvider>
     </>

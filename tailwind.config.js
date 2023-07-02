@@ -20,6 +20,10 @@ module.exports = {
         lightbg: "#F8F7F9",
         darkbg: "#1E1F23",
         red: "#EF233C",
+        brown: "#B26E48",
+        yellow: "#FFD200",
+        blue: "#4682B4",
+        green: "#6BB35E",
         grey: "#464748",
         lightgrey: "#EFEDF1"
       },
@@ -36,12 +40,19 @@ module.exports = {
         '104': '26rem',
         '108': '27rem',
         '112': '28rem',
+        '116': '29rem',
         '120': '30rem',
         '124': '31rem',
         '132': '33rem',
         '136': '34rem',
         '140': '35rem',
         '144': '36rem'
+      },
+      zIndex: {
+        '60': 60,
+        '70': 70,
+        '100': 100,
+        'auto': 'auto',
       }
     },
   },
