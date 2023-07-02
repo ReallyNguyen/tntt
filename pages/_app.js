@@ -25,7 +25,8 @@ export default function App({ Component, pageProps }) {
       <IntlProvider locale={locale} messages={messages[locale]}>
         <Head>
           <meta name='viewport' content="width-device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/sjv.svg" />
+          <title>TNTT Vancouver</title>
         </Head>
         <main>
           <AnimatePresence mode="wait">
