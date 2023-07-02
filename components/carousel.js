@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Carousel() {
+const Carousel = () => {
     const slides = [
         {
             url: "./carousel/1.JPG"
@@ -21,59 +21,64 @@ export default function Carousel() {
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [intervalId, setIntervalId] = useState(null);
+    const intervalDuration = 5000; // 5 seconds
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000); // Change slide every 5 seconds
+        }, intervalDuration);
 
         setIntervalId(interval);
 
         return () => clearInterval(interval);
     }, []);
 
-    const goToNextSlide = () => {
+    const goToSlide = (slideIndex) => {
         clearInterval(intervalId);
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        setCurrentSlide(slideIndex);
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000);
+        }, intervalDuration);
         setIntervalId(interval);
+    };
+
+    const goToNextSlide = () => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+        goToSlide(nextSlide);
     };
 
     const goToPreviousSlide = () => {
-        clearInterval(intervalId);
-        setCurrentSlide((prevSlide) =>
-            prevSlide === 0 ? slides.length - 1 : prevSlide - 1
-        );
-        const interval = setInterval(() => {
-            setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000);
-        setIntervalId(interval);
+        const previousSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        goToSlide(previousSlide);
     };
 
     return (
-        <div className="w-[32rem] h-[33rem] relative">
-            <div
-                style={{ backgroundImage: `url(${slides[currentSlide].url})` }}
-                className="w-full h-full rounded-2xl bg-center bg-cover transition-opacity duration-500"
-            >
-                {/* Left arrow */}
-                <div
-                    className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75"
-                    onClick={goToPreviousSlide}
-                >
-                    <h1 className="text-9xl text-white">&larr;</h1>
-                </div>
+        <div className="w-[32rem] h-[33rem] relative overflow-hidden">
+            <div className="w-full h-full flex" style={{ transform: `translateX(-${currentSlide * 100}%)`, transition: `transform ${intervalDuration / 1000}s ease-out`, willChange: "transform" }}>
+                {slides.map((slide, index) => (
+                    <div
+                        key={index}
+                        className="w-full h-full flex-shrink-0 bg-center bg-cover"
+                        style={{ backgroundImage: `url(${slide.url})` }}
+                    />
+                ))}
+            </div>
 
-                {/* Right arrow */}
-                <div
-                    className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75"
-                    onClick={goToNextSlide}
-                >
-                    <h1 className="text-9xl text-white">&rarr;</h1>
-                </div>
+            {/* Left arrow */}
+            <div className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75" onClick={goToPreviousSlide}>
+                <svg className="text-white w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="currentColor" />
+                </svg>
+            </div>
+
+            {/* Right arrow */}
+            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer transition-opacity duration-500 hover:opacity-75" onClick={goToNextSlide}>
+                <svg className="text-white w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.59 7.41L10 6L16 12L10 18L8.59 16.59L13.17 12L8.59 7.41Z" fill="currentColor" />
+                </svg>
             </div>
         </div>
     );
-}
+};
+
+export default Carousel;

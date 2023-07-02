@@ -94,7 +94,7 @@ export default function Nav({ dir }) {
         };
 
         return (
-            <nav className="fixed items-center justify-center bg-white z-20 font-mono font-black">
+            <nav className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white z-20 font-mono font-black ${isMobileMenuOpen ? "text-3xl" : ""}`}>
                 <div className="flex flex-col items-center justify-center w-full h-full">
                     <div className="relative group mb-4">
                         <button
@@ -103,26 +103,14 @@ export default function Nav({ dir }) {
                                 } focus:outline-none`}
                         >
                             <FormattedMessage id="nav.about" />
-                            {isAboutOpen ? "▲" : "▼"}
+                            {isAboutOpen ? " ▲" : " ▼"}
                         </button>
                         {isAboutOpen && (
-                            <div className="block py-2 w-56 bg-white rounded shadow-lg z-10">
+                            <div className="block text-2xl text-center py-2 z-10">
                                 {/* Dropdown menu items */}
-                                <CustomLink
-                                    href="/about"
-                                    messageId="about.overview"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/resources"
-                                    messageId="about.resource"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/our-team"
-                                    messageId="about.team"
-                                    className="block px-4 py-2"
-                                />
+                                <CustomLink href="/about" messageId="about.overview" className="block px-4 py-4" />
+                                <CustomLink href="/resources" messageId="about.resource" className="block px-4 py-4" />
+                                <CustomLink href="/our-team" messageId="about.team" className="block px-4 py-4" />
                             </div>
                         )}
                     </div>
@@ -133,43 +121,29 @@ export default function Nav({ dir }) {
                                 } focus:outline-none`}
                         >
                             <FormattedMessage id="nav.division" />
-                            {isDivisionOpen ? "▲" : "▼"}
+                            {isDivisionOpen ? " ▲" : " ▼"}
                         </button>
                         {isDivisionOpen && (
-                            <div className="block py-2 w-56 bg-white rounded shadow-lg text-left z-10">
+                            <div className="block text-2xl text-center py-2 z-10">
                                 {/* Dropdown menu items */}
-                                <CustomLink
-                                    href="/"
-                                    messageId="division.seedling"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/"
-                                    messageId="division.search"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/"
-                                    messageId="division.companion"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/"
-                                    messageId="division.eucharistic"
-                                    className="block px-4 py-2"
-                                />
-                                <CustomLink
-                                    href="/"
-                                    messageId="division.youth"
-                                    className="block px-4 py-2"
-                                />
+                                <CustomLink href="/" messageId="division.seedling" className="block px-4 py-4" />
+                                <CustomLink href="/" messageId="division.search" className="block px-4 py-4" />
+                                <CustomLink href="/" messageId="division.companion" className="block px-4 py-4" />
+                                <CustomLink href="/" messageId="division.eucharistic" className="block px-4 py-4" />
+                                <CustomLink href="/" messageId="division.youth" className="block px-4 py-4" />
                             </div>
                         )}
                     </div>
                     {/* Other menu items */}
                     <CustomLink href="/" messageId="nav.news" className="mb-4" />
                     <CustomLink href="/" messageId="nav.contact" className="mb-4" />
-                    <CustomLink href="/" messageId="nav.register" className="mb-4" />
+                    <div className="flex flex-row gap-4  mb-4">
+                        {[...locales].sort().map((locale) => (
+                            <Link key={locale} href="" locale={locale}>
+                                <div>{locale}</div>
+                            </Link>
+                        ))}
+                    </div>
                     <div className="flex flex-row items-center">
                         <button className="bg-red px-2.5 py-1.5 rounded-md transform transition-all duration-300 hover:scale-105 hover:bg-red-500">
                             <CustomLink
@@ -192,7 +166,7 @@ export default function Nav({ dir }) {
         <>
             <header
                 dir={dir}
-                className="flex flex-row justify-between lg:px-28 px-12 py-8 font-montserrat font-black relative lg:sticky top-0 z-20 bg-lightbg"
+                className="flex flex-row justify-between lg:px-28 px-12 py-8 font-montserrat font-black sticky top-0 z-20 bg-lightbg"
             >
                 <Link href="/" className="flex flex-row items-center">
                     <CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />
