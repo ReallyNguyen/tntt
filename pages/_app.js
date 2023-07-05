@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import Head from 'next/head'
-import Navbar from '@/components/nav'
+
 import { useRouter } from 'next/router'
 import { IntlProvider } from 'react-intl'
 

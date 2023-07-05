@@ -20,9 +20,9 @@ export default function Footer({ dir }) {
         <>
             <footer
                 dir={dir}
-                className="bg-darkbg text-white flex flex-col lg:px-28 px-12 pt-4 pb-1 font-montserrat lg:text-base text-xs"
+                className="bg-darkbg text-white flex flex-col lg:px-28 px-8 pt-4 pb-1 font-montserrat lg:text-base text-xs bottom-0"
             >
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between flex-grow">
                     <ul className="flex flex-col">
                         <li className="mb-4">TNTT Vancouver - Đoàn Thánh Giuse</li>
                         <li className="mb-4">3261 Fleming St, Vancouver, BC V5N 3V6</li>
@@ -103,7 +103,7 @@ export default function Footer({ dir }) {
                     </Link>
                     <div className="w-100 h-0.5 bg-white"></div>
                 </div>
-                <h2 className="text-center lg:text-base text-sm py-3">
+                <h2 className="text-center lg:text-base text-xs py-3">
                     © 2023 TNTT - Vietnamese Eucharistic Youth Movement
                 </h2>
             </footer>

@@ -43,7 +43,7 @@ export default function Nav({ dir }) {
                         <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg z-10">
                             <CustomLink href="/about" messageId="about.overview" className="block px-4 py-2" />
                             <CustomLink href="/resources" messageId="about.resource" className="block px-4 py-2" />
-                            <CustomLink href="/our-team" messageId="about.team" className="block px-4 py-2" />
+                            <CustomLink href="/team" messageId="about.team" className="block px-4 py-2" />
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export default function Nav({ dir }) {
                     </div>
                 </div>
                 <CustomLink href="/" messageId="nav.news" className="lg:mr-7" />
-                <CustomLink href="/" messageId="nav.contact" className="lg:mr-7" />
+                <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
                 <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
                         <Link key={locale} href="" locale={locale}>
@@ -96,11 +96,11 @@ export default function Nav({ dir }) {
         return (
             <nav className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white z-20 font-mono font-black ${isMobileMenuOpen ? "text-3xl" : ""}`}>
                 <div className="flex flex-col items-center justify-center w-full h-full">
+                    <CustomLink href="/" messageId="nav.home" className="mb-4" />
                     <div className="relative group mb-4">
                         <button
                             onClick={toggleAboutDropdown}
-                            className={`flex items-center ${isAboutOpen ? "text-blue-500" : "text-black"
-                                } focus:outline-none`}
+                            className={`flex items-center ${isAboutOpen ? "text-blue-500" : "text-black"} focus:outline-none`}
                         >
                             <FormattedMessage id="nav.about" />
                             {isAboutOpen ? " ▲" : " ▼"}
@@ -108,8 +108,8 @@ export default function Nav({ dir }) {
                         {isAboutOpen && (
                             <div className="block text-2xl text-center py-2 z-10">
                                 {/* Dropdown menu items */}
-                                <CustomLink href="/about" messageId="about.overview" className="block px-4 py-4" />
-                                <CustomLink href="/resources" messageId="about.resource" className="block px-4 py-4" />
+                                <CustomLink href="/about/about" messageId="about.overview" className="block px-4 py-4" />
+                                <CustomLink href="/about/resources" messageId="about.resource" className="block px-4 py-4" />
                                 <CustomLink href="/our-team" messageId="about.team" className="block px-4 py-4" />
                             </div>
                         )}
@@ -117,8 +117,7 @@ export default function Nav({ dir }) {
                     <div className="relative group mb-4">
                         <button
                             onClick={toggleDivisionDropdown}
-                            className={`flex items-center ${isDivisionOpen ? "text-blue-500" : "text-black"
-                                } focus:outline-none`}
+                            className={`flex items-center ${isDivisionOpen ? "text-blue-500" : "text-black"} focus:outline-none`}
                         >
                             <FormattedMessage id="nav.division" />
                             {isDivisionOpen ? " ▲" : " ▼"}
@@ -136,7 +135,7 @@ export default function Nav({ dir }) {
                     </div>
                     {/* Other menu items */}
                     <CustomLink href="/" messageId="nav.news" className="mb-4" />
-                    <CustomLink href="/" messageId="nav.contact" className="mb-4" />
+                    <CustomLink href="/contact" messageId="nav.contact" className="mb-4" />
                     <div className="flex flex-row gap-4  mb-4">
                         {[...locales].sort().map((locale) => (
                             <Link key={locale} href="" locale={locale}>
@@ -158,18 +157,14 @@ export default function Nav({ dir }) {
         );
     };
 
-
-
-
-
     return (
         <>
             <header
                 dir={dir}
-                className="flex flex-row justify-between lg:px-28 px-12 py-8 font-montserrat font-black sticky top-0 z-20 bg-lightbg"
+                className="flex flex-row justify-between lg:px-28 px-8 py-8 font-montserrat font-black sticky top-0 z-20 bg-lightbg"
             >
                 <Link href="/" className="flex flex-row items-center">
-                    <CustomImage src="sjv.svg" width={50} height={50} className="mr-4" />
+                    <CustomImage src="sjv.svg" alt="sjv" width={50} height={50} className="mr-4" />
                     <h2>TNTT Vancouver</h2>
                 </Link>
 
