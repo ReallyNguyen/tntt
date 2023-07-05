@@ -6,14 +6,6 @@ import Footer from "@/components/footer";
 import TransitionEffect from "@/components/transitionEffect";
 import { FormattedMessage, useIntl } from "react-intl";
 
-const CustomLink = ({ href, messageId, className = "" }) => {
-    return (
-        <Link href={href} className={className}>
-            <FormattedMessage id={messageId} />
-        </Link>
-    );
-};
-
 export default function Home({ dir }) {
 
     const intl = useIntl();

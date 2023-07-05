@@ -9,8 +9,10 @@ const CustomImage = ({ src, width, height, className = "" }) => {
 };
 
 const CustomLink = ({ href, messageId, className = "" }) => {
+    const router = useRouter()
+    const isActive = router.asPath === href;
     return (
-        <Link href={href} className={className}>
+        <Link href={href} className={`${className} ${isActive ? "underline" : ""} hover:underline`}>
             <FormattedMessage id={messageId} />
         </Link>
     );
@@ -59,7 +61,7 @@ export default function Nav({ dir }) {
                         </div>
                     </div>
                 </div>
-                <CustomLink href="/" messageId="nav.news" className="lg:mr-7" />
+                <CustomLink href="/news" messageId="nav.news" className="lg:mr-7" />
                 <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
                 <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
@@ -134,7 +136,7 @@ export default function Nav({ dir }) {
                         )}
                     </div>
                     {/* Other menu items */}
-                    <CustomLink href="/" messageId="nav.news" className="mb-4" />
+                    <CustomLink href="/news" messageId="nav.news" className="mb-4" />
                     <CustomLink href="/contact" messageId="nav.contact" className="mb-4" />
                     <div className="flex flex-row gap-4  mb-4">
                         {[...locales].sort().map((locale) => (

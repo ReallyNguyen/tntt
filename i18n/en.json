@@ -13,5 +13,10 @@
     "nav.news": "News",
     "nav.schedule": "Schedule",
     "nav.contact": "Contact",
-    "nav.register": "Register"
+    "nav.register": "Register",
+    "michael.role": "Chapter President",
+    "teresa.role": "Vice President of Administration",
+    "gabriel.role": "Vice President of Training",
+    "jessica.role": "Chapter Secretary",
+    "rosa.role": "Chapter Treasurer"
 }

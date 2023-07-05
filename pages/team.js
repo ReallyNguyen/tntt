@@ -1,49 +1,80 @@
 import React from "react";
+import TransitionEffect from "@/components/transitionEffect";
+import { motion as m } from 'framer-motion'
 import Nav from "@/components/nav";
 import Card from "@/components/card";
 import Footer from "@/components/footer";
+import { FormattedMessage, useIntl } from "react-intl";
 
-export default function Team() {
+export default function Team({ dir }) {
+    const intl = useIntl();
     return (
         <>
-            <main>
-                <Nav />
+            <TransitionEffect />
+            <m.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.75, delay: 1, ease: "easeInOut" }}
+            >
+                <main>
+                    <Nav />
+                    <h1 className="text-4xl lg:text-5xl font-raleway font-bold text-center">Meet The Team</h1>
+                    <section className="flex lg:flex-row flex-col lg:px-28 px-8 py-8 justify-evenly">
+                        <Card
+                            name="TR. MICHAEL"
+                            role={
+                                <FormattedMessage
+                                    id="michael.role"
+                                    defaultMessage="Default Role Text"
+                                />
+                            }
+                            image="/card/michael.JPG"
+                        />
+                        <Card
+                            name="TR. TERESA"
+                            role={
+                                <FormattedMessage
+                                    id="teresa.role"
+                                    defaultMessage="Default Role Text"
+                                />
+                            }
+                            image="/card/teresa.JPG"
+                        />
+                        <Card
+                            name="TR. GABRIEL"
+                            role={
+                                <FormattedMessage
+                                    id="gabriel.role"
+                                    defaultMessage="Default Role Text"
+                                />
+                            }
+                            image="/card/gabriel.JPG"
+                        />
+                        <Card
+                            name="TR. JESSICA"
+                            role={
+                                <FormattedMessage
+                                    id="jessica.role"
+                                    defaultMessage="Default Role Text"
+                                />
+                            }
+                            image="/card/jessica.JPG"
+                        />
+                        <Card
+                            name="TR. ROSA"
+                            role={
+                                <FormattedMessage
+                                    id="rosa.role"
+                                    defaultMessage="Default Role Text"
+                                />
+                            }
+                            image="/card/rosa.JPG"
+                        />
+                    </section>
 
-                <section className="flex flex-row px-28 py-8">
-                    <Card
-                        name="TR. MICHAEL"
-                        role="Chapter President"
-                        image="/card/michael.JPG"
-                    />
-
-                    <Card
-                        name="TR. GABRIEL"
-                        role="Vice President of Training"
-                        image="/card/gabriel.JPG"
-                    />
-
-                    <Card
-                        name="TR. TERESA"
-                        role="Vice President of Administration"
-                        image="/card/teresa.JPG"
-                    />
-
-                    <Card
-                        name="TR. JESSICA"
-                        role="Chapter Secretary"
-                        image="/card/jessica.JPG"
-                    />
-
-                    <Card
-                        name="TR. ROSA"
-                        role="Chapter Treasurer"
-                        image="/card/rosa.JPG"
-                    />
-
-                </section>
-
-                <Footer />
-            </main>
+                    <Footer />
+                </main>
+            </m.div>
         </>
     )
 }
