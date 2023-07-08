@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import TransitionEffect from "@/components/transitionEffect";
 import { motion as m } from 'framer-motion'
 import { FormattedMessage, useIntl } from "react-intl";
-import CalendarApp from "@/components/calendarApp";
+
 import Link from "next/link";
 
 const CustomLink = ({ href, messageId, className = "" }) => {
@@ -162,7 +162,7 @@ export default function Home({ dir }) {
               </button>
             </div>
           </section>
-          <CalendarApp />
+
           <Footer dir={dir} />
 
         </main>
