@@ -7,7 +7,7 @@ export default function Card(props) {
         <div className="px-4 py-4">
             {/* Desktop version */}
             <div className="hidden lg:block group relative items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
-                <div className="h-84 sm:h-auto sm:w-full">
+                <div className="h-40 sm:h-auto sm:w-full">
                     <img
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:rotate-3 group-hover:scale-125"
                         src={image}
@@ -40,10 +40,11 @@ export default function Card(props) {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col items-center justify-end text-center text-white">
                         <div className="flex flex-col text-left">
-                            <p className="mb-3 text-sm font-raleway">{role}</p>
-                            <h1 className="mb-3 text-lg font-raleway">{name}</h1>
+                            <p className="mb-3 sm:text-sm md:text-3xl font-raleway">{role}</p>
+                            <h1 className="mb-3 sm:text-lg md:text-2xl font-raleway">{name}</h1>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
