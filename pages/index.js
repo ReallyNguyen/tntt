@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import TransitionEffect from "@/components/transitionEffect";
 import { motion as m } from 'framer-motion'
 import { FormattedMessage, useIntl } from "react-intl";
+import Calendar from "@/components/calendar";
 
 import Link from "next/link";
 
@@ -164,7 +165,6 @@ export default function Home({ dir }) {
           </section>
 
           <Footer dir={dir} />
-
         </main>
       </m.div>
     </>

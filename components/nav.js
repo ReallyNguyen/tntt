@@ -62,6 +62,7 @@ export default function Nav({ dir }) {
                     </div>
                 </div>
                 <CustomLink href="/news" messageId="nav.news" className="lg:mr-7" />
+                <CustomLink href="/schedule" messageId="nav.schedule" className="lg:mr-7" />
                 <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
                 <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
