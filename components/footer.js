@@ -4,6 +4,16 @@ import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 import Image from "next/image";
 
+const getImagePath = (src) => {
+    const { locale } = useRouter();
+    return `/${locale}/${src}`;
+};
+
+const CustomImage = ({ src, style, width, height, className = "" }) => {
+    const imagePath = getImagePath(src);
+    return <Image src={imagePath} width={width} height={height} className={className} style={style} />;
+};
+
 const CustomLink = ({ href, messageId, className = "" }) => {
     return (
         <Link href={href} className={className}>
@@ -75,7 +85,7 @@ export default function Footer({ dir }) {
                 <div className="hidden lg:flex justify-between items-center mx-5 my-8">
                     <div className="w-100 h-0.5 bg-white"></div>
                     <Link href="https://www.facebook.com/St.JosephTNTT/">
-                        <Image
+                        <CustomImage
                             src="./icons/facebook.svg"
                             width={50}
                             height={50}
@@ -84,7 +94,7 @@ export default function Footer({ dir }) {
                         />
                     </Link>
                     <Link href="https://www.instagram.com/tntt_vancouver/?hl=en">
-                        <Image
+                        <CustomImage
                             src="./icons/instagram.svg"
                             width={50}
                             height={50}
@@ -93,7 +103,7 @@ export default function Footer({ dir }) {
                         />
                     </Link>
                     <Link href="https://www.youtube.com/@tnttvancouver-oangiuse8427">
-                        <Image
+                        <CustomImage
                             src="./icons/youtube.svg"
                             width={50}
                             height={50}

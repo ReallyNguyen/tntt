@@ -6,9 +6,17 @@ import { useRouter } from "next/router";
 import { FormattedMessage, useIntl } from "react-intl";
 
 // CustomImage component for displaying images with Next.js Image
-const CustomImage = ({ src, width, height, className = "" }) => {
-    return <Image src={src} width={width} height={height} className={`${className}`} />;
+
+const getImagePath = (src) => {
+    const { locale } = useRouter();
+    return `/${locale}/${src}`;
 };
+
+const CustomImage = ({ src, width, height, className = "" }) => {
+    const imagePath = getImagePath(src);
+    return <Image src={imagePath} width={width} height={height} className={className} />;
+};
+
 
 // CustomLink component for rendering links with internationalization support
 const CustomLink = ({ href, messageId, className = "" }) => {

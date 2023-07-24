@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-numberformat": "^8.7.0",
+    "@formatjs/intl-relativetimeformat": "^11.2.4",
     "framer-motion": "^10.12.18",
     "next": "13.4.7",
     "next-i18next": "^14.0.0",
