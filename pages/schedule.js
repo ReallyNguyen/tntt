@@ -75,7 +75,7 @@ export default function Calendar({ dir }) {
                 transition={{ duration: 0.75, delay: 1, ease: "easeInOut" }}
             >
                 <Nav />
-                <div className="px-8 md:px-10 lg:px-28 pb-16">
+                <div className="px-8 md:px-10 lg:px-40 pb-16">
                     <h1 className="text-4xl lg:text-5xl text-center font-raleway font-bold pb-16">Schedule</h1>
                     <div className="flex justify-center items-center mb-4">
                         <button className="text-lg font-semibold bg-transparent hover:bg-gray-200 rounded-lg py-2 px-20 transition-colors duration-300" onClick={goToPreviousMonth}>

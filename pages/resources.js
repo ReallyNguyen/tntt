@@ -8,7 +8,6 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { motion as m } from 'framer-motion'
 
 export default function Home({ dir }) {
-
     const intl = useIntl();
 
     return (
@@ -30,7 +29,7 @@ export default function Home({ dir }) {
                                 <div className="flex flex-col justify-between">
                                     <div className="pl-36">
                                         <h1 className="text-3xl font-raleway pb-10">St Joseph Parish</h1>
-                                        <p className="w-full">Learn more about our parish community by visiting their website by clicking on "learn more" below.</p>
+                                        <p className="w-full"><FormattedMessage id="resource.veym" /></p>
                                     </div>
                                     <Link href="https://stjosephvancouver.ca/" target="_blank" rel="noopener noreferrer" className="pl-36">
                                         <button className=" flex flex-start border-2 border-black py-4 px-8 transition-all duration-300 hover:bg-black hover:text-white hover:border-white">Learn More</button>
@@ -48,7 +47,7 @@ export default function Home({ dir }) {
 
                                 <div className="flex flex-col justify-between">
                                     <div>
-                                        <p className="w-68 pb-8">Learn more about our parish community by visiting their website by clicking on "learn more" below.</p>
+                                        <p className="w-68 pb-8"><FormattedMessage id="resource.joseph" /></p>
                                     </div>
                                     <Link href="https://stjosephvancouver.ca/" target="_blank" rel="noopener noreferrer">
                                         <button className=" flex flex-start border-2 border-black py-4 px-8 transition-all duration-300 hover:bg-black hover:text-white hover:border-white">Learn More</button>
@@ -65,7 +64,7 @@ export default function Home({ dir }) {
                                 <div className="flex flex-col justify-between">
                                     <div className="pl-36">
                                         <h1 className="text-3xl font-raleway pb-10">VEYM</h1>
-                                        <p className="w-68">To learn more about TNTT in Canada, visit their website by clicking on "learn more" below.</p>
+                                        <p className="w-68"><FormattedMessage id="resource.veym" /></p>
                                     </div>
                                     <Link href="https://stjosephvancouver.ca/" target="_blank" rel="noopener noreferrer" className="pl-36">
                                         <button className=" flex flex-start border-2 border-black py-4 px-8 transition-all duration-300 hover:bg-black hover:text-white hover:border-white">Learn More</button>

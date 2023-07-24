@@ -103,7 +103,7 @@ export default function Footer({ dir }) {
                     </Link>
                     <div className="w-100 h-0.5 bg-white"></div>
                 </div>
-                <h2 className="text-center lg:text-base text-xs py-3">
+                <h2 className="text-center lg:text-base text-xs py-6">
                     © 2023 TNTT - Vietnamese Eucharistic Youth Movement
                 </h2>
             </footer>

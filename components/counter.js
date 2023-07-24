@@ -7,7 +7,7 @@ const Counter = ({ endNumber, speed }) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const triggerPoint = 500; // Adjust the trigger point as needed
+            const triggerPoint = 90; // Adjust the trigger point as needed
 
             if (scrollPosition > triggerPoint && !startCounting) {
                 setStartCounting(true);

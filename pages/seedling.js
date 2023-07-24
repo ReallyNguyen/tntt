@@ -14,9 +14,9 @@ export default function Seedling({ dir }) {
                 header="Seedling"
                 description="nothing"
                 smheader="About"
-                image="/card/gabriel.jpg"
+                image="/about/group.jpg"
             />
-            <section className=" flex lg:flex-row flex-col lg:px-28 px-8 py-8">
+            <section className=" flex lg:flex-row flex-col lg:px-28 px-8">
                 <Card
                     name="TR. MICHAEL"
                     role={
