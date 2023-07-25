@@ -7,7 +7,7 @@ import TransitionEffect from "@/components/transitionEffect";
 import { FormattedMessage, useIntl } from "react-intl";
 import { motion as m } from 'framer-motion'
 
-export default function Home({ dir }) {
+export default function Resources({ dir }) {
     const intl = useIntl();
 
     return (

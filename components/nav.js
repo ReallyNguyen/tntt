@@ -122,7 +122,7 @@ export default function Nav({ dir }) {
             <nav className={`fixed top-0 left-0 w-full h-full bg-white ${isMobileMenuOpen ? "block" : "hidden"} z-20`}>
                 <div className="flex flex-col items-center justify-center h-full">
                     {/* Main "Home" link */}
-                    <CustomLink href="/" messageId="nav.home" className="block mt-8 text-3xl font-bold text-center" />
+                    <CustomLink href="/" messageId="nav.home" className="text-xl block pt-4" />
 
                     {/* Dropdown for "About" */}
                     <div className="relative mt-8">
