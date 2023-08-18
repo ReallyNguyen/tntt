@@ -37,7 +37,7 @@ export default function Home({ dir }) {
                     <section className="px-8 py-6 lg:px-28">
                         <div className="lg:flex lg:flex-row-reverse flex flex-col-reverse">
                             <div className="lg:w-2/3 lg:px-8">
-                                <p className="text-base leading-relaxed">
+                                <p className="text-base mt-4 leading-relaxed">
                                     VEYM stands for Phong Trào Thiếu Nhi Thánh Thể Việt Nam (TNTT),
                                     which is translated as "The Vietnamese Eucharistic Youth
                                     Movement." It is a Catholic youth organization for Vietnamese
