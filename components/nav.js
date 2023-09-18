@@ -166,8 +166,8 @@ export default function Nav({ dir }) {
 
                     {/* Other menu items */}
                     <CustomLink href="/news" messageId="nav.news" className="text-xl block py-4 border-t border-gray-200" />
+                    <CustomLink href="/schedule" messageId="nav.schedule" className="text-xl block py-4 border-t border-b border-gray-200" />
                     <CustomLink href="/contact" messageId="nav.contact" className="text-xl block py-4 border-t border-b border-gray-200" />
-
                     {/* Locale selection */}
                     <div className="flex flex-row justify-center py-4 border-b border-gray-200">
                         {[...locales].sort().map((locale) => (

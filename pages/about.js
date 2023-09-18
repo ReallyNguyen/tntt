@@ -134,32 +134,32 @@ export default function Home({ dir }) {
                         <h2 className="text-2xl lg:text-4xl font-bold py-8">VEYM FAQs</h2>
                         <div className="grid gap-8 lg:grid-cols-2">
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">What’s the difference between VEYM and TNTT?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">The Vietnamese Eucharistic Youth Movement (VEYM) is simply the English translation of Thiếu Nhi Thánh Thể (TNTT), which is the original Vietnamese name of our organization.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.1" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.1a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">Can I join VEYM if I am not Vietnamese?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">Vietnamese culture and language are an integral part of VEYM, so you would be missing out on a lot when engaging with our lessons and activities.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.2" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.2a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">Do I have to be Catholic?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">Nope! But don’t be surprised if you experience a conversion!</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.3" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.3a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">What if I attend a different parish, but want to attend VEYM here?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">You are absolutely welcome to be a part of VEYM here while remaining a parishioner at your original parish.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.4" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.4a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">Is uniform mandatory?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">Yes, the uniform is mandatory as it demonstrates unity in VEYM.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.5" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.5a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">How often do you meet?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">We meet regularly every Saturday from 4:30pm-6:30pm, followed by Holy Mass at 7pm.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.6" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.6a" /></p>
                             </div>
                             <div className="border border-gray-300 rounded p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-4">Do you organize any special events?</h3>
-                                <p className="text-base lg:text-lg leading-relaxed">Yes! Throughout the year, we participate in the parish through fundraising and performing for events (e.g., dancing, singing, acting), as well as Summer Camp and the occasional out-of-province events with VEYM Canada.</p>
+                                <h3 className="text-lg lg:text-xl font-semibold mb-4"><FormattedMessage id="faq.7" /></h3>
+                                <p className="text-base lg:text-lg leading-relaxed"><FormattedMessage id="faq.7a" /></p>
                             </div>
                         </div>
                     </section>

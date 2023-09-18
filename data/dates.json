@@ -1,4 +1,34 @@
-{
-    "holiday": "Christmas",
-    "date": "2023-12-25"
-}
+[
+    {
+        "holiday": "Thanksgiving",
+        "date": "2023-10-07"
+    },
+    {
+        "holiday": "Remembrance Day",
+        "date": "2023-11-11"
+    },
+    {
+        "holiday": "Christmas Break",
+        "date": "2023-12-23"
+    },
+    {
+        "holiday": "Christmas Break",
+        "date": "2023-12-30"
+    },
+    {
+        "holiday": "Lunar New Year",
+        "date": "2024-02-10"
+    },
+    {
+        "holiday": "Family Day Weekend",
+        "date": "2024-02-17"
+    },
+    {
+        "holiday": "Easter",
+        "date": "2024-03-30"
+    },
+    {
+        "holiday": "Victoria Day",
+        "date": "2024-05-18"
+    }
+]

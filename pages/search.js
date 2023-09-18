@@ -5,14 +5,14 @@ import Division from "@/components/division";
 import Card from "@/components/card";
 import { FormattedMessage, useIntl } from "react-intl";
 
-export default function Seedling({ dir }) {
+export default function Search({ dir }) {
     const intl = useIntl();
     return (
         <>
             <Nav />
             <Division
                 header={<FormattedMessage
-                    id="division.seedling"
+                    id="division.search"
                 />}
                 description="Coming soon!"
                 smheader="About"

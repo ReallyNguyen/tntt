@@ -31,7 +31,7 @@ export default function Division(props, { dir }) {
 
                 <section>
                     <h1 className="text-xl lg:text-5xl font-raleway font-bold text-center py-16">
-                        Huynh Truong
+                        Huynh Truong (coming soon!)
                     </h1>
                 </section>
 
