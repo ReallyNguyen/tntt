@@ -22,6 +22,18 @@ const CustomImage = ({ src, width, height, className = "" }) => {
 const CustomLink = ({ href, messageId, className = "" }) => {
     const router = useRouter()
     const isActive = router.asPath === href;
+
+    // Check if the link is an email link
+    const isEmailLink = href.startsWith("mailto:");
+
+    if (isEmailLink) {
+        return (
+            <Link href={href} className={`${className} ${isActive ? "underline" : ""} hover:underline`} target="_blank" rel="noopener noreferrer">
+                <FormattedMessage id={messageId} />
+            </Link>
+        );
+    }
+
     return (
         <Link href={href} className={`${className} ${isActive ? "underline" : ""} hover:underline`}>
             <FormattedMessage id={messageId} />
@@ -81,7 +93,7 @@ export default function Nav({ dir }) {
                 {/* Other menu items */}
                 <CustomLink href="/news" messageId="nav.news" className="lg:mr-7" />
                 <CustomLink href="/schedule" messageId="nav.schedule" className="lg:mr-7" />
-                <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
+                <CustomLink href="mailto:sjvchapter@gmail.com" messageId="nav.contact" className="lg:mr-7" />
                 {/* Locale selection */}
                 <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
@@ -167,7 +179,7 @@ export default function Nav({ dir }) {
                     {/* Other menu items */}
                     <CustomLink href="/news" messageId="nav.news" className="text-xl block py-4 border-t border-gray-200" />
                     <CustomLink href="/schedule" messageId="nav.schedule" className="text-xl block py-4 border-t border-b border-gray-200" />
-                    <CustomLink href="/contact" messageId="nav.contact" className="text-xl block py-4 border-t border-b border-gray-200" />
+                    <CustomLink href="mailto:sjvchapter@gmail.com" messageId="nav.contact" className="lg:mr-7" />
                     {/* Locale selection */}
                     <div className="flex flex-row justify-center py-4 border-b border-gray-200">
                         {[...locales].sort().map((locale) => (
