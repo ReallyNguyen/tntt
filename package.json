@@ -11,12 +11,16 @@
   "dependencies": {
     "@formatjs/intl-numberformat": "^8.7.0",
     "@formatjs/intl-relativetimeformat": "^11.2.4",
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/image-url": "^1.0.2",
     "framer-motion": "^10.12.18",
-    "next": "13.4.7",
-    "next-i18next": "^14.0.0",
+    "next": "^14.0.4",
+    "next-i18next": "^15.1.1",
+    "next-sanity": "^7.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intl": "^6.4.4"
+    "react-intl": "^6.4.4",
+    "sanity": "^3.21.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

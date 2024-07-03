@@ -5,7 +5,10 @@ const nextConfig = {
     locales: ["en", "vn"],
     defaultLocale: "en",
     localeDetection: false
-  }
+  },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
 }
 
 module.exports = nextConfig
