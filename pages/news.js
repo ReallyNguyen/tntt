@@ -4,6 +4,7 @@ import Nav from "@/components/nav";
 import NextLink from "next/link";
 import Image from "next/image";
 import urlBuilder from "@sanity/image-url";
+import TransitionEffect from "@/components/transitionEffect";
 
 const urlFor = source =>
     urlBuilder({ projectId: '5fs1b3fp', dataset: 'production' }).image(source);
@@ -19,7 +20,15 @@ export default function News({ posts }) {
     return (
         <>
             <main className="font-montserrat min-h-screen">
-                <iframe src="https://calendar.google.com/calendar/embed?src=jordannguyen704%40gmail.com&ctz=America%2FVancouver" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                <TransitionEffect />
+                <Nav />
+                <div className="flex justify-center">
+                    <div className="bg-white p-8 rounded-lg shadow-md w-2/6 h-40 flex items-center justify-center">
+                        <h1 className="text-4xl font-bold mb-4"> Currently working on it!</h1>
+                    </div>
+                </div>
+
+                {/* <iframe src="https://calendar.google.com/calendar/embed?src=jordannguyen704%40gmail.com&ctz=America%2FVancouver" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                 <Nav />
                 <div className="container px-4 mx-auto max-w-4xl py-10">
                     <h2 className="text-4xl font-bold mb-8 text-center">Latest Posts</h2>
@@ -62,7 +71,7 @@ export default function News({ posts }) {
                             </p>
                         </div>
                     )}
-                </div>
+                </div> */}
             </main>
         </>
     );
