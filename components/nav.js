@@ -22,18 +22,6 @@ const CustomImage = ({ src, width, height, className = "" }) => {
 const CustomLink = ({ href, messageId, className = "" }) => {
     const router = useRouter()
     const isActive = router.asPath === href;
-
-    // Check if the link is an email link
-    const isEmailLink = href.startsWith("mailto:");
-
-    if (isEmailLink) {
-        return (
-            <Link href={href} className={`${className} ${isActive ? "underline" : ""} hover:underline`} target="_blank" rel="noopener noreferrer">
-                <FormattedMessage id={messageId} />
-            </Link>
-        );
-    }
-
     return (
         <Link href={href} className={`${className} ${isActive ? "underline" : ""} hover:underline`}>
             <FormattedMessage id={messageId} />
@@ -78,7 +66,7 @@ export default function Nav({ dir }) {
                     </div>
                 </div>
                 {/* Dropdown for "Division" */}
-                {/* <div className="relative group">
+                <div className="relative group">
                     <div className="lg:mr-7 group-hover:underline">
                         <CustomLink href="/division" messageId="nav.division" />
                         <div className="absolute hidden group-hover:block py-2 w-56 bg-white rounded shadow-lg text-left z-10">
@@ -89,11 +77,11 @@ export default function Nav({ dir }) {
                             <CustomLink href="/youth" messageId="division.youth" className="block px-4 py-2" />
                         </div>
                     </div>
-                </div> */}
+                </div>
                 {/* Other menu items */}
                 <CustomLink href="/news" messageId="nav.news" className="lg:mr-7" />
                 <CustomLink href="/schedule" messageId="nav.schedule" className="lg:mr-7" />
-                <CustomLink href="mailto:sjvchapter@gmail.com" messageId="nav.contact" className="lg:mr-7" />
+                <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
                 {/* Locale selection */}
                 <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
@@ -156,8 +144,7 @@ export default function Nav({ dir }) {
                     </div>
 
                     {/* Dropdown for "Division" */}
-
-                    {/* <div className="relative">
+                    <div className="relative">
                         <button
                             onClick={toggleDivisionDropdown}
                             className={`flex flex-col items-center w-full px-0 py-4 text-xl font-semibold border-t border-b border-gray-200 focus:outline-none transition-colors ${isDivisionOpen ? "text-blue-500" : "text-black"}`}
@@ -167,7 +154,7 @@ export default function Nav({ dir }) {
                         </button>
                         {isDivisionOpen && (
                             <div className={`block text-base py-2 px-6 transition-opacity ${isDivisionOpen ? "opacity-100" : "opacity-0"} text-center`}>
-                             
+                                {/* Dropdown menu items */}
                                 <CustomLink href="/seedling" messageId="division.seedling" className="block py-1" />
                                 <CustomLink href="/search" messageId="division.search" className="block py-1" />
                                 <CustomLink href="/companion" messageId="division.companion" className="block py-1" />
@@ -175,13 +162,12 @@ export default function Nav({ dir }) {
                                 <CustomLink href="/youth" messageId="division.youth" className="block py-1" />
                             </div>
                         )}
-                    </div> */}
-
+                    </div>
 
                     {/* Other menu items */}
                     <CustomLink href="/news" messageId="nav.news" className="text-xl block py-4 border-t border-gray-200" />
                     <CustomLink href="/schedule" messageId="nav.schedule" className="text-xl block py-4 border-t border-b border-gray-200" />
-                    <CustomLink href="mailto:sjvchapter@gmail.com" messageId="nav.contact" className="lg:mr-7" />
+                    <CustomLink href="/contact" messageId="nav.contact" className="text-xl block py-4 border-t border-b border-gray-200" />
                     {/* Locale selection */}
                     <div className="flex flex-row justify-center py-4 border-b border-gray-200">
                         {[...locales].sort().map((locale) => (
