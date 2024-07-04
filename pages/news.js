@@ -19,6 +19,7 @@ export default function News({ posts }) {
     return (
         <>
             <main className="font-montserrat min-h-screen">
+                <iframe src="https://calendar.google.com/calendar/embed?src=jordannguyen704%40gmail.com&ctz=America%2FVancouver" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                 <Nav />
                 <div className="container px-4 mx-auto max-w-4xl py-10">
                     <h2 className="text-4xl font-bold mb-8 text-center">Latest Posts</h2>
