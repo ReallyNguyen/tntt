@@ -83,13 +83,13 @@ export default function Nav({ dir }) {
                 <CustomLink href="/schedule" messageId="nav.schedule" className="lg:mr-7" />
                 <CustomLink href="/contact" messageId="nav.contact" className="lg:mr-7" />
                 {/* Locale selection */}
-                <div className="flex flex-row gap-4 mr-7">
+                {/* <div className="flex flex-row gap-4 mr-7">
                     {[...locales].sort().map((locale) => (
                         <Link key={locale} href="" locale={locale}>
                             <div>{locale}</div>
                         </Link>
                     ))}
-                </div>
+                </div> */}
                 {/* Registration button */}
                 <div className="flex flex-row items-center">
                     <button className="bg-red px-2.5 py-1.5 rounded-md transform transition-all duration-300 hover:scale-105 hover:bg-red-500">

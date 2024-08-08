@@ -56,6 +56,9 @@ module.exports = {
         '70': 70,
         '100': 100,
         'auto': 'auto',
+      },
+      boxShadow: {
+        custom: 'rgba(0, 0, 0, 0.24) 0px 5px 7.6px',
       }
     },
   },

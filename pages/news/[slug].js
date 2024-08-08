@@ -2,6 +2,9 @@
 import { createClient } from "next-sanity";
 import Image from "next/image";
 import urlBuilder from "@sanity/image-url";
+import Nav from "@/components/nav";
+import TransitionEffect from "@/components/transitionEffect";
+import { PortableText } from "@portabletext/react";
 
 // Create a Sanity client instance
 const client = createClient({
@@ -18,26 +21,43 @@ const urlFor = source =>
 // React component to display a single post
 export default function Post({ post }) {
     return (
-        <div className="max-w-2xl mx-auto mt-8 p-4">
-            {/* Display the post title */}
-            <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+        <div className="font-montserrat min-h-screen bg-gray-50">
+            <TransitionEffect />
+            <Nav />
+            <div className="max-w-2xl mx-auto mt-16 p-4">
+                {/* Display the post title */}
+                <h1 className="text-4xl font-black mb-4 text-center">{post.title}</h1>
 
-            {/* Render the HTML content of the post */}
+                {/* Display the publication date */}
+                <p className="text-gray-500 text-center mb-8">
+                    {new Date(post._updatedAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric"
+                    })}
+                </p>
 
-            {/* Display the main image of the post if available */}
-            {post?.mainImage?.asset && (
-                <div className="mt-8">
-                    <Image
-                        src={urlFor(post.mainImage.asset).url()}
-                        alt={post.title}
-                        width={200}
-                        height={100}
-                        className="rounded-lg"
+                {/* Display the main image of the post if available */}
+                {post?.mainImage?.asset && (
+                    <div className="my-8 flex justify-center">
+                        <Image
+                            src={urlFor(post.mainImage.asset).url()}
+                            alt={post.title}
+                            width={800} // Increase width
+                            height={533} // Adjust height proportionally
+                            className="rounded-lg"
+                        />
+                    </div>
+                )}
+
+                {/* Render the HTML content of the post */}
+                <div className="prose prose-lg max-w-none">
+
+                    <PortableText
+                        value={post.body}
                     />
                 </div>
-            )}
-
-            <div className="prose" dangerouslySetInnerHTML={{ __html: post.body[0].children[0].text }} />
+            </div>
         </div>
     );
 }

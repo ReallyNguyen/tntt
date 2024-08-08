@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "@/components/nav";
 import Carousel from "@/components/carousel";
 import Counter from "@/components/counter";
+import HomeCard from "@/components/homeCard";
 import Footer from "@/components/footer";
 import TransitionEffect from "@/components/transitionEffect";
 import { motion as m } from 'framer-motion'
@@ -88,6 +89,13 @@ export default function Home({ dir }) {
                 </h2>
               </div>
             </div>
+          </section>
+
+          <section className="px-28 py-16 flex flex-row flex-wrap items-center justify-center gap-20">
+            <HomeCard img="/home/stjoseph.png" name="St Joseph" link="https://stjosephvancouver.ca/" />
+            <HomeCard img="/home/veym.webp" name="Veym" link="http://veym.net/" />
+            <HomeCard img="/home/pope.png" name="Popes Prayer" link="https://www.popesprayer.va/" />
+            <HomeCard img="/home/mej.png" name="Mej International" link="https://www.facebook.com/mej.internacional" />
           </section>
 
           <section className="px-28 py-8 flex flex-col items-center">

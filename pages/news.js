@@ -22,40 +22,33 @@ export default function News({ posts }) {
             <main className="font-montserrat min-h-screen">
                 <TransitionEffect />
                 <Nav />
-                <div className="flex justify-center">
-                    <div className="bg-white p-8 rounded-lg shadow-md w-2/6 h-40 flex items-center justify-center">
-                        <h1 className="text-4xl font-bold mb-4"> Currently working on it!</h1>
-                    </div>
-                </div>
-
-                {/* <iframe src="https://calendar.google.com/calendar/embed?src=jordannguyen704%40gmail.com&ctz=America%2FVancouver" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-                <Nav />
-                <div className="container px-4 mx-auto max-w-4xl py-10">
-                    <h2 className="text-4xl font-bold mb-8 text-center">Latest Posts</h2>
+                <div className="container px-8 mx-auto xl:px-5 max-w-screen-xl py-5 lg:py-8">
+                    <h2 className="text-4xl font-bold mb-16 text-center">Latest Posts</h2>
                     {posts.length > 0 ? (
-                        <ul className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <ul className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                             {posts.map((post) => (
-                                <li key={post._id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+                                <li key={post._id} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-110">
                                     <NextLink href={`/news/${post?.slug?.current}`} passHref>
-                                        <div className="block cursor-pointer">
+                                        <div className="block cursor-pointer h-full">
                                             {post?.mainImage?.asset && (
                                                 <Image
                                                     src={urlFor(post.mainImage.asset).url()}
                                                     alt={post.title}
-                                                    width={300}
-                                                    height={200}
-                                                    className="object-cover w-full h-40 rounded-t-lg"
+                                                    width={450}
+                                                    height={300}
+                                                    className="object-cover w-full h-64 rounded-t-lg"
                                                 />
                                             )}
-                                            <div className="p-6">
-                                                <p className="text-xl font-semibold mb-2">{post?.title}</p>
-                                                <p className="text-gray-600">
+                                            <div className="p-8">
+                                                <p className="text-2xl font-semibold mb-4">{post?.title}</p>
+                                                <p className="text-gray-600 mb-4">
                                                     {new Date(post?._updatedAt).toLocaleDateString("en-US", {
                                                         year: "numeric",
                                                         month: "long",
                                                         day: "numeric"
                                                     })}
                                                 </p>
+                                                <p className="text-gray-700">{post?.excerpt}</p>
                                             </div>
                                         </div>
                                     </NextLink>
@@ -63,15 +56,9 @@ export default function News({ posts }) {
                             ))}
                         </ul>
                     ) : (
-                        <div className="text-center">
-                            <p className="text-2xl font-semibold mb-2">No posts to show</p>
-                            <div className="mb-4">¯\_(ツ)_/¯</div>
-                            <p className="text-gray-600">
-                                Your data will show up here when you've configured everything correctly
-                            </p>
-                        </div>
+                        <p>No posts available.</p>
                     )}
-                </div> */}
+                </div>
             </main>
         </>
     );
